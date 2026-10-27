@@ -1,13 +1,1 @@
-.site-footer { background: #fff; border-top: 1px solid #eeedf3; }
-.footer-inner { align-items: center; display: grid; gap: 8px 24px; grid-template-columns: 1fr 1fr; min-height: 90px; padding-bottom: 18px; padding-top: 18px; }
-.footer-brand { font-size: 15px; grid-column: 1; grid-row: 1; }
-.footer-brand .brand-mark { height: 29px; width: 29px; }
-.footer-brand .brand-mark svg { height: 19px; width: 19px; }
-.footer-inner p { color: #77778d; font-size: 12px; grid-column: 1; grid-row: 2; margin: 0; }
-.footer-copy { color: #9695a7; font-size: 11px; grid-column: 2; grid-row: 1 / span 2; justify-self: end; }
-
-@media (max-width: 600px) {
-  .footer-inner { grid-template-columns: 1fr; padding-bottom: 22px; }
-  .footer-brand, .footer-inner p, .footer-copy { grid-column: 1; grid-row: auto; justify-self: start; }
-  .footer-copy { margin-top: 4px; }
-}
+.site-footer { background: #14213d; color: #fff; } .footer-content { display: flex; gap: 32px; justify-content: space-between; padding: 30px 0; } .footer-content strong { font-family: Manrope, sans-serif; font-size: 1.05rem; } .footer-content p { color: #d5d9e5; font-size: .88rem; line-height: 1.6; margin: 7px 0 0; } .footer-note { max-width: 440px; text-align: right; } .footer-note small { color: #abb4c8; display: block; font-size: .76rem; margin-top: 8px; } @media (max-width: 600px) { .footer-content { flex-direction: column; gap: 16px; } .footer-note { text-align: left; } }

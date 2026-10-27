@@ -1,18 +1,1 @@
-.site-header { background: #fff; border-bottom: 1px solid #f0eff4; }
-.site-header--landing { background: #fbfbfd; border-bottom-color: transparent; }
-.navbar { align-items: center; display: flex; height: 78px; justify-content: space-between; }
-.brand { align-items: center; color: #29273e; display: inline-flex; font-family: Manrope, sans-serif; font-size: 18px; font-weight: 800; gap: 9px; letter-spacing: -0.75px; }
-.brand-mark { align-items: center; background: #eeeaff; border-radius: 9px; color: #6554c7; display: flex; height: 34px; justify-content: center; width: 34px; }
-.brand-mark svg { height: 22px; width: 22px; }
-.brand-accent { color: #7362d1; }
-.navbar-actions { align-items: center; display: flex; gap: 26px; }
-.nav-login, .nav-home-link { color: #58576d; font-size: 13px; font-weight: 600; transition: color 160ms ease; }
-.nav-login:hover, .nav-home-link:hover { color: var(--purple); }
-
-@media (max-width: 500px) {
-  .navbar { height: 68px; }
-  .brand { font-size: 16px; }
-  .navbar-actions { gap: 14px; }
-  .navbar .button-small { min-height: 40px; padding: 0 13px; }
-  .nav-home-link { display: none; }
-}
+.site-header { background: #fff; border-bottom: 1px solid #e9e7f4; } .navbar { align-items: center; display: flex; gap: 28px; min-height: 74px; } .brand { color: #14213d; flex-shrink: 0; font-family: Manrope, sans-serif; font-size: 1.08rem; font-weight: 800; } .nav-links { align-items: center; display: flex; flex: 1; gap: 20px; justify-content: flex-end; } .nav-links a, .nav-links span { color: #4d5567; font-size: .9rem; font-weight: 600; white-space: nowrap; } .nav-links a:hover, .nav-links a.active { color: #6657c8; } @media (max-width: 880px) { .navbar { align-items: flex-start; flex-direction: column; gap: 12px; padding: 18px 0; } .nav-links { flex-wrap: wrap; justify-content: flex-start; row-gap: 10px; } }
