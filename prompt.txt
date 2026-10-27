@@ -1,0 +1,189 @@
+**ROLE:**
+
+Act as an expert React.js developer and beginner-friendly coding instructor. Help me develop a simple, clean, and attractive AI Resume Builder web application using React.js, Express.js, Node.js, and MongoDB.
+
+**PROJECT TITLE:**
+
+AI Resume Builder – Create Your Professional Resume Easily.
+
+**PROJECT OBJECTIVE:**
+
+Develop a simple web application that helps students and job seekers create professional resumes. The application should have a welcome page, a home page, login and registration pages, and resume-building options.
+
+The application should be easy to understand, easy to implement, and suitable for a college mini-project.
+
+**TECHNOLOGIES:**
+
+- Frontend: React.js
+- Backend: Node.js and Express.js
+- Database: MongoDB
+- Styling: HTML and CSS
+- Routing: React Router DOM
+
+Do not introduce unnecessary technologies or complicated architectures.
+
+**MY RESPONSIBILITY:**
+
+I am responsible for developing only the Welcome Page and Home Page.
+
+My friends will handle:
+1. MongoDB database connection.
+2. User registration page.
+3. User login page.
+4. Backend authentication and database-related code.
+
+Develop my pages so they can be easily integrated with my friends' code later.
+
+### TASK 1: WELCOME PAGE
+
+Create an attractive and professional Welcome Page for the AI Resume Builder application.
+
+The page should contain:
+
+1. Application name: AI Resume Builder.
+2. A simple navigation bar with the application logo/name and Login and Register buttons.
+3. A main heading: "Build Your Professional Resume with AI".
+4. A short description explaining how the application helps students and job seekers create professional resumes easily.
+5. A prominent "Get Started" button.
+6. A secondary "Explore Features" button.
+7. A visually attractive resume illustration or resume preview created using HTML and CSS.
+8. A section highlighting the main benefits of the application.
+9. A footer with basic information about the application.
+
+**Welcome Page functionality:**
+
+- Clicking Login should navigate to the login page developed by my friends.
+- Clicking Register should navigate to the registration page developed by my friends.
+- Clicking Get Started should navigate to the registration page.
+- Clicking Explore Features should scroll to the features section on the same page.
+
+For now, use placeholder navigation paths if my friends' actual routes are not available. Make these paths easy to change during integration.
+
+### TASK 2: HOME PAGE
+
+Create a simple, attractive Home Page for the AI Resume Builder application.
+
+The Home Page should contain:
+
+1. A navigation bar displaying the application name.
+2. A welcome heading such as "Create Your Career Story".
+3. A short description about building professional resumes.
+4. A prominent "Create New Resume" button.
+5. A "Build with AI" feature card.
+6. A "Choose a Resume Template" feature card.
+7. A "Resume Tips" feature card.
+8. A "My Resumes" section where users can view their previously created resumes in the future.
+9. A section explaining the steps to create a resume.
+10. A footer.
+
+**Home Page functionality:**
+
+- Clicking Create New Resume should navigate to a placeholder resume creation page.
+- Clicking Build with AI should navigate to a placeholder AI resume creation page.
+- Clicking Choose a Resume Template should navigate to a placeholder template selection page.
+- Clicking Resume Tips should display useful resume-writing tips or navigate to a tips page.
+- Clicking My Resumes should open a placeholder page or section.
+
+Since I am developing only the Welcome Page and Home Page, do not implement the complete resume creation system now. Make the buttons ready for future integration.
+
+### TASK 3: DESIGN REQUIREMENTS
+
+Create a modern, professional, and student-friendly design.
+
+Use the following design guidelines:
+
+- Use a clean layout with sufficient spacing.
+- Choose a professional color combination, such as dark blue, white, and light purple.
+- Use rounded cards and subtle shadows.
+- Make buttons visually attractive.
+- Use readable fonts and clear headings.
+- Make the design responsive for mobile phones, tablets, and desktop screens.
+- Add simple hover effects to buttons and cards.
+- Avoid unnecessary animations and complicated designs.
+- Ensure that all text is readable.
+
+The Welcome Page should look like a professional landing page, and the Home Page should look like a simple dashboard.
+
+### TASK 4: CODING REQUIREMENTS
+
+I am a beginner, so provide simple and understandable code.
+
+1. Use React functional components.
+2. Use basic React hooks only when necessary.
+3. Use React Router DOM for navigation.
+4. Write CSS in separate files.
+5. Do not use TypeScript.
+6. Do not use Tailwind CSS.
+7. Do not use unnecessary UI libraries.
+8. Do not use Redux or complicated state management.
+9. Avoid unnecessary API calls.
+10. Use meaningful component and variable names.
+
+Suggested folder structure:
+
+src/
+  components/
+    Navbar.jsx
+    Footer.jsx
+  pages/
+    Welcome.jsx
+    Home.jsx
+  styles/
+    Welcome.css
+    Home.css
+    Navbar.css
+  App.jsx
+  main.jsx
+
+You may adjust this structure slightly if required, but keep it simple.
+
+### TASK 5: INTEGRATION WITH MY FRIENDS' CODE
+
+My friends will separately develop the login page, registration page, backend, and MongoDB connection.
+
+Therefore:
+
+- Keep the Welcome Page and Home Page independent.
+- Do not implement login, registration, or database connection yourself.
+- Use clearly defined React Router routes.
+- Explain where to connect the login and registration routes.
+- Explain how to make the Home Page the destination after successful login.
+- Do not assume that authentication is already implemented.
+- Do not display actual user-specific resume data without a backend connection.
+- Use sample data only if needed to demonstrate the interface.
+
+### TASK 6: OUTPUT FORMAT
+
+Provide the implementation in the following order:
+
+1. Brief explanation of the project.
+2. Required software and dependencies.
+3. Commands to create the React project.
+4. Installation commands.
+5. Recommended folder structure.
+6. Complete code for App.jsx.
+7. Complete code for Welcome.jsx.
+8. Complete code for Home.jsx.
+9. Complete code for Navbar.jsx and Footer.jsx.
+10. Complete CSS code for every required stylesheet.
+11. Explanation of how page navigation works.
+12. Instructions for running the application.
+13. Instructions for integrating my friends' login and registration pages.
+14. A short explanation of each file in simple language.
+
+Provide complete, working code for every file you introduce. Clearly mention the filename before each code block.
+
+Do not skip code with statements such as "add your remaining CSS here."
+
+**IMPORTANT RESTRICTIONS:**
+
+- Develop only the Welcome Page and Home Page.
+- Keep the code simple and beginner-friendly.
+- Do not implement MongoDB connection, authentication, or the complete resume generator.
+- Do not create unnecessary pages.
+- Do not overcomplicate the project.
+- Ensure the application runs before introducing additional features.
+
+**STOP CONDITION:**
+
+First complete the Welcome Page and Home Page with their CSS and navigation. Stop before implementing the login system, registration system, database integration, or complete AI resume generation. These components will be developed separately by my friends or added later.
