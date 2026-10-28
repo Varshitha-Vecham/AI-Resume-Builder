@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import AuthVisual from "../components/AuthVisual.jsx";
 import "../styles/Auth.css";
 
 export default function Register() {
@@ -66,11 +65,6 @@ export default function Register() {
   return (
     <main className="auth-page">
       <div className="auth-shell">
-        <AuthVisual
-          title="Build Your Dream Career"
-          text="Create professional resumes, get AI-powered suggestions, and stand out from the crowd."
-        />
-
         <section className="auth-card">
           <p className="auth-mobile-brand">AI Resume Builder</p>
           <h1 className="auth-title">Create Account</h1>

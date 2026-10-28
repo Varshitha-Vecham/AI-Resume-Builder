@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import AuthVisual from "../components/AuthVisual.jsx";
 import "../styles/Auth.css";
 
 export default function Login() {
@@ -60,12 +59,7 @@ export default function Login() {
 
   return (
     <main className="auth-page">
-      <div className="auth-shell auth-shell-reverse">
-        <AuthVisual
-          title="Your Next Opportunity Awaits"
-          text="Log in to continue building your resume and get smart suggestions to improve it."
-        />
-
+      <div className="auth-shell">
         <section className="auth-card">
           <p className="auth-mobile-brand">AI Resume Builder</p>
           <h1 className="auth-title">Welcome Back!</h1>
