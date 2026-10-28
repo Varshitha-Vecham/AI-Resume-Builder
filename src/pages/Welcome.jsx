@@ -8,6 +8,6 @@ export default function Welcome() {
       <h1 id="welcome-title">Welcome to AI Resume Builder</h1>
       <p className="welcome-text">Create a professional-looking resume that 
         helps you take the next step in your career.</p>
-      <div className="welcome-actions"><Link className="button button-primary" to="/home">Get Started</Link>
-      <Link className="button button-outline" to="/home">Login</Link></div></section></main>;
+      <div className="welcome-actions"><Link className="button button-primary" to="/register">Get Started</Link>
+      <Link className="button button-outline" to="/login">Login</Link></div></section></main>;
 }

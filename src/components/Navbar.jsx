@@ -5,7 +5,7 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Authentication will be added later; for now this returns the user to welcome.
+    localStorage.removeItem("currentUser");
     navigate("/");
   };
 
