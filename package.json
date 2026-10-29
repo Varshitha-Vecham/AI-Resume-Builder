@@ -4,12 +4,17 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "vite --open",
-    "dev": "vite",
+    "start": "node scripts/dev.js",
+    "dev": "node scripts/dev.js",
+    "client": "vite",
+    "server": "node server.js",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "mongoose": "^9.11.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.2"

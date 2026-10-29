@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../styles/Auth.css";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
 export default function Login() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -30,7 +32,7 @@ export default function Login() {
     return newErrors;
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     const newErrors = validate();
@@ -39,22 +41,22 @@ export default function Login() {
       return;
     }
 
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const email = form.email.trim().toLowerCase();
-    const user = users.find(
-      (savedUser) => savedUser.email === email && savedUser.password === form.password
-    );
-
-    if (!user) {
-      setLoginError("Incorrect email or password. Please try again.");
-      return;
+    try {
+      const response = await fetch(`${API_URL}/api/auth/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: form.email.trim(), password: form.password }),
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        setLoginError(data.message || "Incorrect email or password. Please try again.");
+        return;
+      }
+      localStorage.setItem("currentUser", JSON.stringify(data.user));
+      navigate("/home");
+    } catch {
+      setLoginError("Cannot reach the server. Start the backend and try again.");
     }
-
-    localStorage.setItem(
-      "currentUser",
-      JSON.stringify({ name: user.name, email: user.email })
-    );
-    navigate("/home");
   }
 
   return (

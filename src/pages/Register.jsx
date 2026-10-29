@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/Auth.css";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
 export default function Register() {
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -11,6 +13,8 @@ export default function Register() {
     confirmPassword: "",
   });
   const [errors, setErrors] = useState({});
+  const [submitError, setSubmitError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
 
@@ -18,6 +22,7 @@ export default function Register() {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
     setErrors({ ...errors, [name]: "" });
+    setSubmitError("");
   }
 
   function validate() {
@@ -40,7 +45,7 @@ export default function Register() {
     return newErrors;
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     const newErrors = validate();
@@ -49,17 +54,24 @@ export default function Register() {
       return;
     }
 
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const email = form.email.trim().toLowerCase();
-
-    if (users.some((user) => user.email === email)) {
-      setErrors({ email: "An account with this email already exists." });
-      return;
+    setIsSubmitting(true);
+    try {
+      const response = await fetch(`${API_URL}/api/auth/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: form.name.trim(), email: form.email.trim(), password: form.password }),
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        setSubmitError(data.message || "Could not create the account.");
+        return;
+      }
+      navigate("/login", { state: { registered: true } });
+    } catch {
+      setSubmitError("Cannot reach the server. Start the backend and try again.");
+    } finally {
+      setIsSubmitting(false);
     }
-
-    users.push({ name: form.name.trim(), email, password: form.password });
-    localStorage.setItem("users", JSON.stringify(users));
-    navigate("/login", { state: { registered: true } });
   }
 
   return (
@@ -73,6 +85,7 @@ export default function Register() {
           </p>
 
           <form onSubmit={handleSubmit} noValidate>
+            {submitError && <p className="auth-banner-error" role="alert">{submitError}</p>}
             <div className="auth-field">
               <label htmlFor="name">Full Name</label>
               <input
@@ -155,7 +168,9 @@ export default function Register() {
               )}
             </div>
 
-            <button type="submit" className="auth-submit">Register</button>
+            <button type="submit" className="auth-submit" disabled={isSubmitting}>
+              {isSubmitting ? "Creating account..." : "Register"}
+            </button>
           </form>
 
           <p className="auth-switch">
